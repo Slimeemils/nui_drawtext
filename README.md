@@ -8,7 +8,7 @@ https://discord.gg/loljoshie (without-vanity url: https://discord.gg/HH6uTcBfew)
 
 In collaboration with [OnlyCats](https://github.com/onlycats)
 
-Whether it's for creating menus for the restaurants you work at, instructions at certain locations, trolling citizens, or even leaving announcements SO PEOPLE STOP STEALING TOW TRUCKS! nui_drawtext will be perfect for you! Have the ability to create 3D DrawText with ease through our super awesome NUI menu!
+Whether it's for creating menus at the restaurants you work for, instructions at certain locations, trolling citizens, or even leaving announcements SO PEOPLE STOP STEALING TOW TRUCKS! nui_drawtext will be perfect for you! Have the ability to create 3D DrawText with ease through our super awesome NUI menu!
 
 # Key Features
 * NUI Menu
