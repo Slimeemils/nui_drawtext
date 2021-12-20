@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.umd.prod.js" defer></script>
+        <script src="app.js" defer></script>       
+    </head>
+    
+    <body>
+        <div id="openmenu">
+          <div class="row justify-center"><img class="brand-logo" src="./brand-logo.svg"></img></div>
+            <div id="menu">
+              <div class="q-mb-md">
+              <q-form @submit="onSubmit" class="q-gutter-md">
+            <q-input dark hint="Markdown supported (i.e. &lt;b>, &lt;i>)" type="textarea" rows="1" v-model="content" class="content" color="field" v-model="text" label="Text">
+              <template v-slot:prepend>
+                <q-icon name="create"/>
+              </template>
+            </q-input>
+
+            <q-input dark hint="Hex color supported (i.e. &quot;#FFFFFF&quot;)" v-model="color" class="my-input" color="field" label="Color">
+              <template v-slot:prepend>
+                <q-icon name="palette"/>
+              </template>
+            <template v-slot:append>
+              <q-icon name="colorize" class="cursor-pointer">
+                <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+                  <q-color v-model="color"></q-color>
+                </q-popup-proxy>
+              </q-icon>
+            </template>
+          </q-input>
+
+          <q-input dark hint="Font size (i.e. 0.25, 2.5)" v-model="size" class="size" color="field" v-model="text" label="Font size">
+            <template v-slot:prepend>
+              <q-icon name="text_fields"/>
+            </template>
+          </q-input>
+
+            <q-input dark hint="Visibility distance" type="number" v-model="radius" class="radius" color="field" v-model="text" label="Distance">
+              <template v-slot:prepend>
+                <q-icon name="social_distance"/>
+              </template>
+            </q-input>
+
+            <q-item>
+              <q-item-section avatar>
+                <q-icon color="slider" name="title" />
+              </q-item-section>
+              <q-item-section>
+                <q-slider dark v-model="font" :min="1" :max="4" label color="sliderb"/>
+              </q-item-section>
+             
+            </q-item>
+            <q-item-label>Font style</q-item-label>
+
+              <div class="row justify-center">
+                <q-btn class="Close" label="Submit" type="submit" text-color="black" color="button"></q-btn>
+              </div>
+            </q-form>
+            </div>
+    </div>
+</body>
+</html>
