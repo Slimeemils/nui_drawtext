@@ -40,7 +40,7 @@
             </template>
           </q-input>
 
-            <q-input dark hint="Visibility distance" type="number" v-model="radius" class="radius" color="field" v-model="text" label="Distance">
+            <q-input dark hint="Visibility distance" type="number" v-model="radius" class="radius" color="field" v-model="text" onKeyPress="if(this.value.length==3) return false;" label="Distance">
               <template v-slot:prepend>
                 <q-icon name="social_distance"/>
               </template>
