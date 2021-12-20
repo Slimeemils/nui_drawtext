@@ -13,7 +13,7 @@ Whether it's for creating menus for the restaurants you work at, instructions at
 # Key Features
 * NUI Menu
 * Laser pointer (default: press "K" to open laser and target the specific object or area)
-* Markdown and multiple lines supported
+* Markdown, emojis, and multiple lines supported
 * Changeable text
 * Changeable color
 * Changeable text
