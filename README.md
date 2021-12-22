@@ -1,6 +1,6 @@
 ![nui_drawtext](https://user-images.githubusercontent.com/91661118/146714281-c8da9767-65f5-4903-b63a-97f786e2e3ae.png)
 
-# 🎯✏️ nui_drawtext used with FiveM 🎯✏️
+# 🎯✏️ nui_drawtext used with QBCore 🎯✏️
 
 Join my Discord laboratory for updates, support, and special early testing!
 <br>
@@ -10,7 +10,15 @@ In collaboration with [OnlyCats](https://github.com/onlycats)
 
 Whether it's for creating menus at the restaurants you work for, instructions at certain locations, trolling citizens, or even leaving announcements SO PEOPLE STOP STEALING TOW TRUCKS! nui_drawtext will be perfect for you! Have the ability to create 3D DrawText with ease through our super awesome NUI menu!
 
+# SQL Installation
+* Open your newly downloaded **"nui_drawtext"** folder and find **"drawtext.sql"**
+![Step 1](https://user-images.githubusercontent.com/91661118/147161925-25edd2e1-d4f4-4f0d-87e6-26d1b41a3764.PNG)
+* Open your SQL Database and import **"drawtext.sql"** the result should look like this
+![Step 2](https://user-images.githubusercontent.com/91661118/147162634-a1407f6d-242e-445d-8550-036e3b940651.PNG)
+* **That's it! Now you can create all the drawtexts you desire! (To delete certain drawtexts; delete the matching one created in the SQL Database and relog)**
+
 # Key Features
+* Database saves drawtexts
 * NUI Menu
 * Laser pointer (default: press "K" to open laser and target the specific object or area)
 * Markdown, emojis, and multiple lines supported
@@ -39,6 +47,12 @@ https://user-images.githubusercontent.com/91661118/146716456-b08391b6-9fde-40ba-
 ![announcement](https://user-images.githubusercontent.com/91661118/146716697-95c83db9-357d-478b-9152-312d8fdb411b.png)
 
 # Change Logs
+### 1.1
+* Added max length for font size 
+* Reworked certain functions and restructured overall code 
+* Fixed issue on relog players not being able to render drawtexts created
+* Database now saves drawtexts
+
 ### 1.0
 * Initial release
 
