@@ -2,6 +2,11 @@ local showMenu = false
 local drawText = false
 local activeLaser = false
 
+RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
+    Wait(100)
+    TriggerServerEvent("nui_drawtext:server:sendDrawText")
+end)
+
 RegisterNUICallback('closeMenu', function()
     Wait(50)
     showMenu = false
@@ -41,11 +46,8 @@ local function RayCastGamePlayCamera(distance)
 end
 
 local function rgbToHex(hex)
-    local goaway,redColor,greenColor,blueColor=hex:match('(.)(..)(..)(..)')
-	redColor, greenColor, blueColor = tonumber(redColor, 16)/255, tonumber(greenColor, 16)/255, tonumber(blueColor, 16)/255
-	redColor, greenColor, blueColor = math.floor(redColor*100)/100, math.floor(greenColor*100)/100, math.floor(blueColor*100)/100
-    local color = {redColor, greenColor, blueColor}
-	return color
+    hex = hex:gsub("#","")
+    return tonumber("0x"..hex:sub(1,2)), tonumber("0x"..hex:sub(3,4)), tonumber("0x"..hex:sub(5,6))
 end
 
 local function Draw2DText(content, font, colour, scale, x, y)
@@ -69,14 +71,14 @@ local function Draw3DTextPermanent(params)
                 local onScreen, _x, _y = World3dToScreen2d(params.xyz.x,params.xyz.y,params.xyz.z)
                 local p = GetGameplayCamCoords()
                 local distance = GetDistanceBetweenCoords(p.x, p.y, p.z, params.xyz.x,params.xyz.y,params.xyz.z, 1)
-                local scale = (1 / distance) * (params.perspectiveScale)
                 local fov = (1 / GetGameplayCamFov()) * 75
-                local scale = scale * fov * (params.text.scaleMultiplier)
+                local scale = (1 / distance) * (params.perspectiveScale) * fov * (params.text.scaleMultiplier)
+                local r,g,b=rgbToHex(params.text.rgb)
                 if onScreen then
                     SetTextScale(0.0, scale)
                     SetTextFont(params.text.font)
                     SetTextProportional(true)
-                    SetTextColour(params.text.rgb[1], params.text.rgb[2], params.text.rgb[3], 255)
+                    SetTextColour(r, g, b, 255)
                     SetTextOutline()
                     SetTextEntry("STRING")
                     SetTextCentre(true)
@@ -127,18 +129,8 @@ RegisterNUICallback('createDrawText', function(data, cb)
     elseif arg.font == 1 then
         arg.font = 0
     end
-    params={
-        xyz=coords,
-        text= {
-            content = arg.content,
-            rgb = {arg.red , arg.green, arg.blue},
-            scaleMultiplier = arg.size,
-            font = tonumber(arg.font),
-        },
-        perspectiveScale = 4,
-        radius = tonumber(arg.radius),
-    }
-    TriggerServerEvent('nui_drawtext:server:drawText', params)
+   
+    TriggerServerEvent('nui_drawtext:server:drawText', arg.content, arg.font, coords,arg.color,  arg.size, arg.radius)
     activeLaser = false
     cb('ok')
 end)
@@ -146,13 +138,3 @@ end)
 RegisterNetEvent('nui_drawtext:client:drawText', function(params)
     Draw3DTextPermanent(params)  
 end)
-
-
-
-
-
-
-
-
-
-
