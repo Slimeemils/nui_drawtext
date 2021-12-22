@@ -32,9 +32,7 @@ const app = Vue.createApp({
             radius: radius.value,
             size: size.value,
             font: font.value,
-            red: colorConvert(color.value).r,
-            green: colorConvert(color.value).g,
-            blue: colorConvert(color.value).b,
+           color: color.value,
         }); 
         resetValues(content, color, radius, size)
         }
@@ -63,21 +61,6 @@ function resetValues(content, radius, color, size) {
   color.value = null
   size.value = null
 } 
-
-function colorConvert(hex){
-  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
-    return r + r + g + g + b + b;
-  });
-
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
-}
-
 
 
 $(document).ready(function () {
