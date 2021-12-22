@@ -34,7 +34,7 @@
             </template>
           </q-input>
 
-          <q-input dark hint="Font size (i.e. 0.25, 2.5)" v-model="size" class="size" color="field" v-model="text" label="Font size">
+          <q-input dark hint="Font size (i.e. 0.25, 2.5)" onKeyPress="if(this.value.length==4) return false;" v-model="size" class="size" color="field" v-model="text" label="Font size">
             <template v-slot:prepend>
               <q-icon name="text_fields"/>
             </template>
