@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'nui_drawtext'
-version '1.0'
+version '1.1'
 author 'github.com/loljoshie'
 
 client_script 'config.lua'
