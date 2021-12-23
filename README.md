@@ -21,7 +21,8 @@ Whether it's for creating menus at the restaurants you work for, instructions at
 * In-game option to delete drawtext pointing at (updates automatically and removes from database)
 * Database saves drawtexts
 * NUI Menu
-* Laser pointer (default: press "K" to open laser and target the specific object or area)
+* Laser pointer delete (default: press "DELETE" to open laser and target the specific drawtext)
+* Laser pointer add (default: press "K" to open laser and target the specific object or area)
 * Markdown, emojis, and multiple lines supported
 * Changeable text
 * Changeable color
