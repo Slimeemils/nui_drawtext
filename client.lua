@@ -27,7 +27,7 @@ RegisterNUICallback('closeMenu', function()
 end) 
 
 RegisterKeyMapping('activeLaser', 'Open Menu', 'keyboard', Config.OpenKeyActiveLaser)
-RegisterKeyMapping('deleteLaser', 'Open Menu', 'keyboard', Config.OpenKeyDeleteLaser)
+RegisterKeyMapping('deleteLaser', 'Delete Text', 'keyboard', Config.OpenKeyDeleteLaser)
 
 local function RotationToDirection(rotation)
 	local adjustedRotation =
